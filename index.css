@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans antialiased transition-colors duration-300;
+  }
+
+  .dark body {
+    @apply bg-night-bg text-slate-100;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-xl;
+  }
+  .dark .glass {
+    @apply bg-slate-900/70 backdrop-blur-lg border border-slate-700/50 shadow-2xl;
+  }
+  
+  .glass-card {
+    @apply bg-white/90 backdrop-blur-md border border-gray-100 shadow-lg rounded-2xl;
+  }
+  .dark .glass-card {
+    @apply bg-night-card/90 backdrop-blur-md border border-night-border shadow-2xl rounded-2xl;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary;
+  }
+  .dark .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-cyan-300;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-600 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-500;
+}
